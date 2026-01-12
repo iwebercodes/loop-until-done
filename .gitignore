@@ -1,0 +1,14 @@
+# Ralph state directory
+.ralph/
+
+# Lighthouse reports
+lighthouse-report.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ralph supervises AI coding agents to actually finish what they start. Stop cleaning up after Claude Code with context rotation.">
+  <title>Ralph - Stop cleaning up after your AI coding agent</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230D1117' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='70' font-family='system-ui' font-size='60' font-weight='bold' fill='%2306B6D4' text-anchor='middle'%3Er%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">ralph<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#solution">Solution</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#get-started">Get Started</a></li>
+          <li><a href="https://github.com/iwebercodes/ralph"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Stop cleaning up after your <span class="highlight">AI coding agent</span></h1>
+      <p class="tagline">Ralph supervises Claude Code to actually finish what it starts. No more "it's done!" when it isn't. No more lost context. No more starting over.</p>
+      <div class="cta-group">
+        <div class="code-block">
+          <span class="prompt">$</span>
+          <code>pipx install ralph-loop</code>
+        </div>
+        <a href="https://github.com/iwebercodes/ralph" class="btn btn-secondary"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Point Section -->
+  <section id="problem" class="pain-point">
+    <div class="container">
+      <h2>Claude Code is powerful, <span>but...</span></h2>
+      <div class="problem-list">
+        <div class="problem-item">
+          <span class="problem-icon">!</span>
+          <div>
+            <h3>It loses context in long conversations</h3>
+            <p>The more you iterate, the more confused it gets. Early decisions get forgotten. You end up repeating yourself.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <span class="problem-icon">!</span>
+          <div>
+            <h3>Failed attempts pollute its memory</h3>
+            <p>Every wrong turn stays in context. The agent starts mixing up what worked and what didn't.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <span class="problem-icon">!</span>
+          <div>
+            <h3>It declares "done" when it isn't</h3>
+            <p>You ask for a feature, it says it's complete, but half the edge cases are broken. Back to cleanup duty.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section id="solution" class="solution">
+    <div class="container">
+      <h2>Context rotation fixes this</h2>
+      <p class="solution-intro">Instead of one long, polluted conversation, Ralph runs multiple short iterations. Each starts fresh but continues from where the last left off. Progress is saved in files, not in context.</p>
+
+      <div class="loop-diagram">
+        <pre>
+  <span class="cyan">ROTATION 1</span>              <span class="cyan">ROTATION 2</span>              <span class="cyan">ROTATION 3</span>
+  +-----------+           +-----------+           +-----------+
+  |  Fresh    |           |  Fresh    |           |  Fresh    |
+  |  Context  |           |  Context  |           |  Context  |
+  +-----------+           +-----------+           +-----------+
+       |                       |                       |
+       v                       v                       v
+  +-----------+           +-----------+           +-----------+
+  |   Work    |           |   Work    |           |   Work    |
+  |  on task  |           |  on task  |           |  on task  |
+  +-----------+           +-----------+           +-----------+
+       |                       |                       |
+       v                       v                       v
+  +-----------+           +-----------+           +-----------+
+  |  <span class="yellow">Save</span>     |   ---->   |  <span class="yellow">Load</span>     |   ---->   |  <span class="yellow">Load</span>     |
+  |  <span class="yellow">Progress</span> |           |  <span class="yellow">Progress</span> |           |  <span class="yellow">Progress</span> |
+  +-----------+           +-----------+           +-----------+
+       |                       |                       |
+       v                       v                       v
+   <span class="magenta">CONTINUE</span>                <span class="magenta">CONTINUE</span>                 <span class="green">DONE</span>
+        </pre>
+      </div>
+
+      <p>Each rotation gets a clean slate without the baggage of failed attempts, but picks up exactly where the previous rotation left off using file-based handoffs.</p>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Describe what you want</h3>
+            <p>Create a PROMPT.md file with your goal and success criteria. Ralph injects this into every rotation.</p>
+            <div class="step-code">
+              <pre><span class="comment"># PROMPT.md</span>
+
+<span class="key"># Goal</span>
+<span class="value">Build a REST API for user authentication</span>
+
+<span class="key"># Success Criteria</span>
+<span class="value">- POST /register creates new users
+- POST /login returns JWT tokens
+- All endpoints have tests passing</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Run Ralph</h3>
+            <p>Ralph starts Claude Code and supervises it. The agent works, saves progress to files, and signals when to rotate or when it's done.</p>
+            <div class="step-code">
+              <pre><span class="comment">$</span> <span class="value">ralph run</span>
+
+<span class="comment"># Ralph will:</span>
+<span class="comment"># - Start Claude Code with your PROMPT.md</span>
+<span class="comment"># - Monitor for completion signals</span>
+<span class="comment"># - Rotate context when needed</span>
+<span class="comment"># - Verify completion 3x before finishing</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Get actually finished work</h3>
+            <p>Ralph keeps rotating until the task is truly complete. No premature "done" declarations. No lost progress. No cleanup duty for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification Section -->
+  <section id="verification" class="verification">
+    <div class="container">
+      <h2>Ralph doesn't just trust "done"</h2>
+      <p class="verification-intro">When an agent signals completion, Ralph starts a verification cycle. The task must pass three consecutive checks before it's truly finished.</p>
+
+      <div class="verification-grid">
+        <div class="verification-card">
+          <h3><span class="check">1</span> First verification</h3>
+          <p>Fresh context reviews all work against the original success criteria. Any issues? Back to implementation.</p>
+        </div>
+        <div class="verification-card">
+          <h3><span class="check">2</span> Second verification</h3>
+          <p>Another fresh context checks again. Different perspective might catch different issues.</p>
+        </div>
+        <div class="verification-card">
+          <h3><span class="check">3</span> Third verification</h3>
+          <p>Final check confirms everything works. Three passes with no changes means it's actually done.</p>
+        </div>
+      </div>
+
+      <p class="mt-2">If any verification finds issues and makes changes, the counter resets. This ensures the agent can't just declare victory and move on.</p>
+    </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section id="get-started" class="get-started">
+    <div class="container">
+      <h2>Get Started</h2>
+
+      <div class="install-block">
+        <div class="label">Install with pipx</div>
+        <code>pipx install ralph-loop</code>
+      </div>
+
+      <div class="quick-steps">
+        <h3>Quick Start</h3>
+        <ol>
+          <li>Create a <code>PROMPT.md</code> with your goal and success criteria</li>
+          <li>Run <code>ralph run</code> in your project directory</li>
+          <li>Watch Ralph supervise your AI agent to completion</li>
+        </ol>
+        <p class="mt-1-5">
+          <a href="https://github.com/iwebercodes/ralph" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Full Documentation on GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+      </div>
+      <div class="footer-author">
+        Built by <a href="https://www.linkedin.com/in/ilja-weber-bb7135b5/"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg> Ilja Weber</a>
+        <a href="https://x.com/iwebercodes" class="social-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/></svg> X</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
