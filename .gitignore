@@ -2,7 +2,7 @@
 .ralph/
 
 # Lighthouse reports
-lighthouse-report.json
+lighthouse*.json
 
 # OS files
 .DS_Store
@@ -12,3 +12,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+test-results/
+node_modules/

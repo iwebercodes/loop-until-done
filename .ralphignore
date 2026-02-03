@@ -1,1 +1,37 @@
-lighthouse-report.json
+# Ralph state directory
+.ralph/
+
+# Lighthouse reports
+lighthouse*.json
+
+# QA tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+test-results/
+node_modules/

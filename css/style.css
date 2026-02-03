@@ -27,6 +27,7 @@
 :root {
   --bg-primary: #0D1117;
   --bg-surface: #161B22;
+  --bg-terminal: #0A0F14;
   --accent-cyan: #06B6D4;
   --accent-green: #22C55E;
   --accent-yellow: #EAB308;
@@ -36,7 +37,7 @@
   --border: #30363D;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 }
 
 /* Reset and Base Styles */
@@ -58,6 +59,18 @@ body {
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+pre, code {
+  font-family: var(--font-mono);
+}
+
+pre {
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 /* Typography */
@@ -97,6 +110,13 @@ a:hover {
 a svg {
   vertical-align: -0.125em;
   margin-right: 0.25rem;
+}
+
+.tap-target {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
 }
 
 /* Layout */
@@ -146,6 +166,11 @@ nav ul {
 }
 
 nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 0.5rem;
   color: var(--text-secondary);
   font-size: 0.9rem;
 }
@@ -189,15 +214,15 @@ nav a:hover {
 
 /* Code Block */
 .code-block {
-  background: var(--bg-surface);
+  background: var(--bg-terminal);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem 1.5rem;
-  font-family: var(--font-mono);
   font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .code-block code {
@@ -207,6 +232,29 @@ nav a:hover {
 .code-block .prompt {
   color: var(--text-secondary);
   user-select: none;
+}
+
+.copy-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.copy-button:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
 }
 
 .btn {
@@ -220,6 +268,7 @@ nav a:hover {
   transition: all 0.2s ease;
   border: none;
   cursor: pointer;
+  min-height: 44px;
 }
 
 .btn-primary {
@@ -254,6 +303,13 @@ nav a:hover {
 }
 
 .pain-point h2 span {
+  color: var(--text-secondary);
+}
+
+.problem-intro {
+  font-size: 1.05rem;
+  margin: 0 0 2rem;
+  max-width: 640px;
   color: var(--text-secondary);
 }
 
@@ -299,16 +355,16 @@ nav a:hover {
 }
 
 .loop-diagram {
-  background: var(--bg-surface);
+  background: var(--bg-terminal);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
   overflow-x: auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 .loop-diagram pre {
-  font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.5;
@@ -363,15 +419,15 @@ nav a:hover {
 }
 
 .step-code {
-  background: var(--bg-primary);
+  background: var(--bg-terminal);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem 1.5rem;
   overflow-x: auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
 .step-code pre {
-  font-family: var(--font-mono);
   font-size: 0.85rem;
   margin: 0;
   color: var(--text-secondary);
@@ -442,11 +498,12 @@ nav a:hover {
 }
 
 .install-block {
-  background: var(--bg-primary);
+  background: var(--bg-terminal);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 .install-block .label {
@@ -459,7 +516,6 @@ nav a:hover {
 
 .install-block code {
   display: block;
-  font-family: var(--font-mono);
   font-size: 1.25rem;
   color: var(--accent-green);
 }
@@ -494,7 +550,6 @@ nav a:hover {
 }
 
 .quick-steps code {
-  font-family: var(--font-mono);
   background: var(--bg-primary);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
@@ -666,5 +721,29 @@ footer {
 
   .install-block code {
     font-size: 1rem;
+  }
+
+  .verification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-block {
+    flex-wrap: wrap;
+  }
+
+  .loop-diagram {
+    max-width: 100%;
+  }
+
+  .loop-diagram pre {
+    font-size: 0.5rem;
+  }
+
+  .step-code {
+    max-width: calc(100vw - 2rem);
+  }
+
+  .step-code pre {
+    font-size: 0.75rem;
   }
 }
