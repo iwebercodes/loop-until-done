@@ -5,7 +5,6 @@
 lighthouse*.json
 
 # QA tool caches
-.pytest_cache/
 .mypy_cache/
 .ruff_cache/
 
@@ -17,10 +16,16 @@ build/
 # Python bytecode
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
 
 # Virtual environments
 .venv/
 venv/
+env/
+ENV/
+virtualenv/
 
 # Editor files
 .idea/
@@ -28,10 +33,32 @@ venv/
 *.swp
 *.swo
 *~
+*.tmp
+*.bak
+.*.swp
+.*.swo
 
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
+# Coverage reports
+.coverage
+coverage/
+htmlcov/
+.tox/
+.coverage.*
+
+# Testing and CI artifacts
 test-results/
+.pytest_cache/
+.benchmarks/
+
+# Node.js
 node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Screenshots and media
+screenshots/

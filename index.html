@@ -6,10 +6,13 @@
   <meta name="description" content="Ralph supervises AI coding agents to actually finish what they start. Stop cleaning up after Claude Code with context rotation.">
   <title>Ralph - Stop cleaning up after your AI coding agent</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230D1117' width='100' height='100' rx='15'/%3E%3Ctext x='50' y='70' font-family='system-ui' font-size='60' font-weight='bold' fill='%2306B6D4' text-anchor='middle'%3Er%3C/text%3E%3C/svg%3E">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/Inter-Regular.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/Inter-Medium.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/Inter-Bold.woff2">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <header id="top">
     <div class="container header-content">
       <a href="#" class="logo">ralph<span>.</span></a>
       <nav>
@@ -17,8 +20,7 @@
           <li><a href="#problem">Problem</a></li>
           <li><a href="#solution">Solution</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#get-started">Get Started</a></li>
-          <li><a href="https://github.com/iwebercodes/ralph"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> GitHub</a></li>
+          <li><a href="#get-started" data-cta="Get Started">Get Started</a></li>
         </ul>
       </nav>
     </div>
@@ -26,7 +28,7 @@
 
   <main>
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="container hero-content">
       <h1>Stop cleaning up after your <span class="highlight">AI coding agent</span></h1>
       <p class="tagline">Ralph supervises your AI coding agent with context rotation, so every iteration starts clean and stays accountable. No more "it's done!" when it isn't. No more lost context. No more starting over.</p>
@@ -36,7 +38,7 @@
           <code>pipx install ralph-loop</code>
           <button class="copy-button" type="button" data-copy="pipx install ralph-loop" aria-label="Copy install command">Copy</button>
         </div>
-        <a class="btn btn-secondary" href="https://github.com/iwebercodes/ralph">
+        <a class="btn btn-secondary" href="https://github.com/iwebercodes/ralph" data-cta="Try Ralph Loop">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
@@ -80,6 +82,20 @@
     <div class="container">
       <h2>Context rotation fixes this</h2>
       <p class="solution-intro">Instead of one long, polluted conversation, Ralph runs multiple short iterations. Each starts fresh but continues from where the last left off. Progress is saved in files, not in context.</p>
+      <div class="solution-points">
+        <div class="solution-point">
+          <h3>Stops "done" too early</h3>
+          <p>Ralph treats "done" as a checkpoint, not a finish line. It verifies completion multiple times across fresh rotations.</p>
+        </div>
+        <div class="solution-point">
+          <h3>Keeps context clean</h3>
+          <p>Every rotation starts with a clean slate, so failed attempts don't clutter the next pass.</p>
+        </div>
+        <div class="solution-point">
+          <h3>Saves progress safely</h3>
+          <p>Work carries forward through file-based handoffs, so nothing gets lost between rotations.</p>
+        </div>
+      </div>
 
       <div class="loop-diagram">
         <pre>
@@ -119,8 +135,8 @@
         <div class="step">
           <div class="step-number">1</div>
           <div class="step-content">
-            <h3>Describe what you want</h3>
-            <p>Create a PROMPT.md file with your goal and success criteria. Ralph injects this into every rotation.</p>
+            <h3>Create PROMPT.md</h3>
+            <p>Write your goal, constraints, and success criteria in <code>PROMPT.md</code>. Ralph uses this file as the source of truth for every rotation.</p>
             <div class="step-code">
               <pre><span class="comment"># PROMPT.md</span>
 
@@ -139,7 +155,7 @@
           <div class="step-number">2</div>
           <div class="step-content">
             <h3>Run Ralph</h3>
-            <p>Ralph starts Claude Code and supervises it. The agent works, saves progress to files, and signals when to rotate or when it's done.</p>
+            <p>Run one command in your project folder. Ralph starts the agent, supervises each rotation, and keeps progress saved in handoff files.</p>
             <div class="step-code">
               <pre><span class="comment">$</span> <span class="value">ralph run</span>
 
@@ -155,8 +171,16 @@
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-content">
-            <h3>Get actually finished work</h3>
-            <p>Ralph keeps rotating until the task is truly complete. No premature "done" declarations. No lost progress. No cleanup duty for you.</p>
+            <h3>Ralph handles the rest</h3>
+            <p>Ralph automatically rotates context, runs verification cycles, and only stops after completion is detected with repeated clean checks.</p>
+            <div class="step-code">
+              <pre><span class="comment">[rotation 7/300] CONTINUE</span>
+<span class="comment">[rotation 8/300] CONTINUE</span>
+<span class="comment">[verification 1/3] PASS</span>
+<span class="comment">[verification 2/3] PASS</span>
+<span class="comment">[verification 3/3] PASS</span>
+<span class="comment">[status] DONE - all success criteria met</span></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -167,24 +191,24 @@
   <section id="verification" class="verification">
     <div class="container">
       <h2>Ralph doesn't just trust "done"</h2>
-      <p class="verification-intro">When an agent signals completion, Ralph starts a verification cycle. The task must pass three consecutive checks before it's truly finished.</p>
+      <p class="verification-intro">AI agents love to declare victory prematurely. Ralph's triple verification system catches issues they miss — no more cleaning up after false completions.</p>
 
       <div class="verification-grid">
         <div class="verification-card">
-          <h3><span class="check">1</span> First verification</h3>
-          <p>Fresh context reviews all work against the original success criteria. Any issues? Back to implementation.</p>
+          <h3><span class="check">✓</span> Agent signals DONE</h3>
+          <p>When the agent thinks it's finished, Ralph doesn't just take its word for it. This triggers the verification cycle.</p>
         </div>
         <div class="verification-card">
-          <h3><span class="check">2</span> Second verification</h3>
-          <p>Another fresh context checks again. Different perspective might catch different issues.</p>
+          <h3><span class="check">✓✓</span> Must confirm 3 times</h3>
+          <p>Ralph runs three consecutive verification passes. Each with fresh context. Each checking against your success criteria.</p>
         </div>
         <div class="verification-card">
-          <h3><span class="check">3</span> Third verification</h3>
-          <p>Final check confirms everything works. Three passes with no changes means it's actually done.</p>
+          <h3><span class="check">✓✓✓</span> Or counter resets</h3>
+          <p>If any check fails or makes changes, back to zero. Only three clean passes in a row means truly complete.</p>
         </div>
       </div>
 
-      <p class="mt-2">If any verification finds issues and makes changes, the counter resets. This ensures the agent can't just declare victory and move on.</p>
+      <p class="mt-2"><strong>This changes everything:</strong> No more premature "done" declarations. No more finding broken edge cases later. Ralph keeps verifying until the work actually meets your standards — not just when the agent thinks it does.</p>
     </div>
   </section>
 
@@ -195,26 +219,25 @@
 
       <div class="install-block">
         <div class="label">Install with pipx</div>
-        <pre><code class="language-bash">pipx install ralph-loop</code></pre>
+        <pre><code class="language-bash">$ pipx install ralph-loop</code></pre>
       </div>
 
       <div class="quick-steps">
         <h3>Quick Start</h3>
         <ol>
           <li>Install Ralph</li>
-          <li>Create a <code>PROMPT.md</code> with your goal and success criteria</li>
-          <li>Run <code>ralph run</code> in your project directory</li>
+          <li>Create <code>PROMPT.md</code> with your task</li>
+          <li>Run <code>ralph run</code></li>
         </ol>
-        <p class="mt-1-5">
-          <a href="https://github.com/iwebercodes/ralph" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Full Documentation on GitHub</a>
-        </p>
       </div>
+
+      <p class="mt-2">For full documentation, examples, and advanced usage, use the GitHub link above, then run your first loop with <code>ralph run</code>.</p>
     </div>
   </section>
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer id="site-footer">
     <div class="container footer-content">
       <div class="footer-links">
         <a href="impressum.html" class="tap-target">Impressum</a>
@@ -227,12 +250,29 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.copy-button').forEach((button) => {
+    function trackUmamiEvent(eventName, payload) {
+      if (typeof window.umami === 'undefined') {
+        return;
+      }
+
+      if (payload) {
+        window.umami.track(eventName, payload);
+        return;
+      }
+
+      window.umami.track(eventName);
+    }
+
+    // Copy button tracking
+    document.querySelectorAll('.copy-button, .copy-btn').forEach((button) => {
       button.addEventListener('click', async () => {
         const command = button.getAttribute('data-copy');
         if (!command) {
           return;
         }
+
+        trackUmamiEvent('copy-code');
+
         try {
           await navigator.clipboard.writeText(command);
           button.textContent = 'Copied!';
@@ -247,6 +287,27 @@
         }
       });
     });
+
+    // External link tracking
+    document.querySelectorAll('a[href^="http"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        try {
+          const url = new URL(e.currentTarget.href);
+          trackUmamiEvent('external-link', { domain: url.hostname });
+        } catch (_) {
+          // Ignore invalid URL values to keep analytics non-blocking.
+        }
+      });
+    });
+
+    // CTA button tracking
+    document.querySelectorAll('[data-cta]').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        const buttonText = e.currentTarget.getAttribute('data-cta') || e.currentTarget.textContent.trim();
+        trackUmamiEvent('cta-click', { button: buttonText });
+      });
+    });
+
   </script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="e08bd4d4-3b2c-4e54-bf90-29814bc548d2"></script>
 </body>

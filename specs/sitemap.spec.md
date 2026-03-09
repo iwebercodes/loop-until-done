@@ -1,5 +1,7 @@
 # Sitemap
 
+> **Testing Guidelines**: When verifying this spec, follow the [QA guidelines](../references/qa.md)
+
 A sitemap.xml file helps search engines discover and index all pages.
 
 ## Requirements

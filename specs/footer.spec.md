@@ -1,5 +1,7 @@
 # Footer Section
 
+> **Testing Guidelines**: When verifying this spec, follow the [QA guidelines](../references/qa.md)
+
 The footer contains legal links and author attribution.
 
 **Reference:** See `specs/references/author.md` for author details and social links.
@@ -31,15 +33,11 @@ The footer contains legal links and author attribution.
 - [ ] Does NOT duplicate GitHub link (if already prominent elsewhere)
 - [ ] Footer is visually distinct from main content
 
+### General
+- [ ] You MUST NOT write any automated tests to verify the success criteria. Just read the files directly.
+
 ## Verification
 
-```bash
-# Check footer content
-grep -A20 '<footer' index.html
+Read `index.html` and verify all success criteria are met. The file is small enough to review directly.
 
-# Check for required links
-grep -E "(impressum|linkedin|x\.com)" index.html
-
-# Check for SVG icons in footer
-grep -A2 'footer' index.html | grep '<svg'
-```
+You must NOT create test scripts to verify the success criteria. Temprorary scripts are ok, but don't forget to delete them.

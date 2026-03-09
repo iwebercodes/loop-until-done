@@ -1,5 +1,15 @@
 {
+  "scripts": {
+    "sitemap:generate": "node scripts/generate-sitemap.js",
+    "test": "echo 'No automated tests are defined for this static site. Verify specs by direct file review per specs/references/qa.md.'",
+    "test:visual": "echo 'No automated visual tests are defined for this static site. Use direct review or temporary checks only.'"
+  },
   "devDependencies": {
-    "playwright": "^1.58.1"
+    "@playwright/test": "^1.58.2",
+    "jsdom": "^28.0.0",
+    "playwright": "^1.58.2"
+  },
+  "dependencies": {
+    "minimatch": "^10.1.2"
   }
 }
